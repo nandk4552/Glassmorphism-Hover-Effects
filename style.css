@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --c-1: #5da6ff;
+    --c-2: #ff0;
+    --c-3: #0f0;
+    --c-4: #df2fff;
+    --c-5: #ff308f;
+
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #1e2759;
+    border-radius: .5rem;
+}
+ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+}
+ul li{
+    list-style: none;
+}
+ul li a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 20px 30px;
+    z-index: 1000;
+    backdrop-filter: blur(20px);
+}
+
+ul li a ion-icon {
+    font-size: 2.5em;
+    pointer-events: none;
+    opacity: 0.25;
+    transition: 0.25s;
+}
+ul li.active a ion-icon {
+    opacity: 1;
+}
+#marker{
+    position: absolute;
+    top: 0;
+    transition: 0.5s;
+    z-index: 1;
+}
+#marker::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;height: 40px;
+    border-radius: 1rem;
+
+}
+ul li:nth-child(1).active ~ #marker::before {
+    background: var(--c-1);
+    box-shadow: 0 0 15px var(--c-1),
+                0 0 30px var(--c-1),
+                0 0 45px var(--c-1),
+                0 0 60px var(--c-1),
+                0 0 75px var(--c-1);
+
+}
+ul li:nth-child(2).active ~ #marker::before {
+    background: var(--c-2);
+    box-shadow: 0 0 15px var(--c-2),
+                0 0 30px var(--c-2),
+                0 0 45px var(--c-2),
+                0 0 60px var(--c-2),
+                0 0 75px var(--c-2);
+
+}
+ul li:nth-child(3).active ~ #marker::before {
+    background: var(--c-3);
+    box-shadow: 0 0 15px var(--c-3),
+                0 0 30px var(--c-3),
+                0 0 45px var(--c-3),
+                0 0 60px var(--c-3),
+                0 0 75px var(--c-3);
+
+}
+ul li:nth-child(4).active ~ #marker::before {
+    background: var(--c-4);
+    box-shadow: 0 0 15px var(--c-4),
+                0 0 30px var(--c-4),
+                0 0 45px var(--c-4),
+                0 0 60px var(--c-4),
+                0 0 75px var(--c-4);
+}
+ul li:nth-child(5).active ~ #marker::before {
+    background: var(--c-5);
+    box-shadow: 0 0 15px var(--c-5),
+                0 0 30px var(--c-5),
+                0 0 45px var(--c-5),
+                0 0 60px var(--c-5),
+                0 0 75px var(--c-5);
+}
